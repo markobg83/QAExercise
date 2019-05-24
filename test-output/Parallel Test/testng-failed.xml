@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Parallel Test]" parallel="classes">
+  <parameter name="browser" value="firefox"/>
+  <test name="SecondTest(failed)" parallel="classes" preserve-order="true">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="tests.CheckConcludedTopic">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.CheckConcludedTopic -->
+      <class name="tests.CreateTopicAndConclusion">
+        <methods>
+          <include name="testCreateTopicAndConclusion"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.CreateTopicAndConclusion -->
+      <class name="tests.UploadProfileImage">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.UploadProfileImage -->
+    </classes>
+  </test> <!-- SecondTest(failed) -->
+</suite> <!-- Failed suite [Parallel Test] -->
